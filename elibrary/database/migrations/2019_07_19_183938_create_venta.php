@@ -15,7 +15,12 @@ class CreateVenta extends Migration
     {
         Schema::create('venta', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
+            $table->timestamps('created_at')->nullable();
+            $table->timestamps('updated_at')->nullable();
+            $table->integer('id');
+            $table->integer('id_cart');
+            $table->integer('pay_id');
+            $table->decimal('total');
         });
     }
 
