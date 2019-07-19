@@ -15,12 +15,11 @@ class CreateCarrito extends Migration
     {
         Schema::create('cart', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps('created_at')->nullable();
-            $table->timestamps('updated_at')->nullable();
-            $table->bigIncrements('user_id');
-            $table->bigIncrements('prod_id');
+            $table->timestamps();
+            $table->bigInteger('user_id');
+            $table->bigInteger('prod_id');
             $table->decimal('price');
-            $table->bigIncrements('quantity');
+            $table->bigInteger('quantity');
         });
     }
 

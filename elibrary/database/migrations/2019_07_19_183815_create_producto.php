@@ -15,13 +15,12 @@ class CreateProducto extends Migration
     {
         Schema::create('product', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps('created_at')->nullable();
-            $table->timestamps('updated_at')->nullable();
+            $table->timestamps();
             $table->string('name_prod');
             $table->string('barcode');
             $table->decimal('price');
             $table->string('pic_prod');
-            $table->integer('category_id');
+            $table->bigInteger('category_id');
         });
     }
 

@@ -15,10 +15,8 @@ class CreateMetodopago extends Migration
     {
         Schema::create('payment_method', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps('created_at')->nullable();
-            $table->timestamps('updated_at')->nullable();
-            $table->integer('id');
-            $table->integer('name_pay');
+            $table->timestamps();
+            $table->string('name_pay');
         });
     }
 
