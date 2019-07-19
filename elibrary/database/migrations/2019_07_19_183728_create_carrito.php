@@ -13,9 +13,14 @@ class CreateCarrito extends Migration
      */
     public function up()
     {
-        Schema::create('carrito', function (Blueprint $table) {
+        Schema::create('cart', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
+            $table->timestamps('created_at')->nullable();
+            $table->timestamps('updated_at')->nullable();
+            $table->bigIncrements('user_id');
+            $table->bigIncrements('prod_id');
+            $table->decimal('price');
+            $table->bigIncrements('quantity');
         });
     }
 
@@ -26,6 +31,6 @@ class CreateCarrito extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('carrito');
+        Schema::dropIfExists('cart');
     }
 }
