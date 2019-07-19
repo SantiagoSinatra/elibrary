@@ -21,7 +21,6 @@ class CreateProducto extends Migration
             $table->string('barcode');
             $table->decimal('price');
             $table->string('pic_prod');
-            $table->string('pic_prod');
             $table->integer('category_id');
         });
     }
