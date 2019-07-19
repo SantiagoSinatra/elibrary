@@ -13,9 +13,12 @@ class CreateMetodopago extends Migration
      */
     public function up()
     {
-        Schema::create('metodopago', function (Blueprint $table) {
+        Schema::create('payment_method', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
+            $table->timestamps('created_at')->nullable();
+            $table->timestamps('updated_at')->nullable();
+            $table->integer('id');
+            $table->integer('name_pay');
         });
     }
 
@@ -26,6 +29,6 @@ class CreateMetodopago extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('metodopago');
+        Schema::dropIfExists('payment_method');
     }
 }
