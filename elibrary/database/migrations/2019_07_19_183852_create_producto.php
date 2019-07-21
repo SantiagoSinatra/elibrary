@@ -17,10 +17,16 @@ class CreateProducto extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string('name_prod');
-            $table->string('barcode');
+            $table->string('barcode')->nullable();
             $table->decimal('price');
-            $table->string('pic_prod');
-            $table->bigInteger('category_id');
+            $table->string('pic_prod')->nullable();
+            $table->unsignedInteger('category_id');
+
+           /*  $table->foreign('category_id')
+            ->references('id')
+            ->on('categoria')
+            ->onDelete('cascade'); */
+
         });
     }
 
