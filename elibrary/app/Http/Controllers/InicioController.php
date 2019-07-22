@@ -8,6 +8,7 @@ class InicioController extends Controller
 {
     //devuelve la vista inicial
     public function index(){
-        return view('inicio.main');
+        $products = \App\Producto::all();
+        return view('inicio.main', ['products' => $products]);
     }
 }
