@@ -14,6 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('faq','NavController@faq');
+Route::get('index','NavController@index');
+Route::get('login','NavController@login');
+Route::get('register','NavController@register');
+Route::get('contact','NavController@contact');
+
+
+
 
 Auth::routes();
 
