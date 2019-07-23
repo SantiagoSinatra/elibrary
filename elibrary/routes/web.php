@@ -12,8 +12,10 @@
 */
 
 Route::get('/', 'InicioController@index')->name('inicio');
+Route::get('/productos', 'ProductosController@index')->name('inicio-productos');
 Route::get('/vender', 'ProductosController@create')->name('crear');
 Route::post('/guardarProducto', 'ProductosController@save')->name('guardar');
+
 
 Auth::routes();
 
