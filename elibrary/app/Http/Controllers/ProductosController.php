@@ -62,7 +62,7 @@ class ProductosController extends Controller
         $product = Producto::find($id);
         $product->delete();
 
-        return redirect()->route("productos.productos");
+        return redirect()->route("inicio-productos");
     }
 
     public function edit($id)
