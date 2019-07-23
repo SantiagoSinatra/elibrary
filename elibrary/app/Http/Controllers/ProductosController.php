@@ -65,5 +65,12 @@ class ProductosController extends Controller
         return redirect()->route("productos.productos");
     }
 
+    public function edit($id)
+    {
+        $categories = \App\Categoria::all();
+        $product = Producto::find($id);
+        return view('productos.editar',compact('product','categories'));
+    }
+
 
 }

@@ -13,8 +13,9 @@
 
 Route::get('/', 'InicioController@index')->name('inicio');
 Route::get('/productos', 'ProductosController@index')->name('inicio-productos');
-Route::get('/vender', 'ProductosController@create')->name('crear');
+Route::get('/vender', 'ProductosController@create')->middleware('auth')->name('crear');
 Route::post('/guardarProducto', 'ProductosController@save')->name('guardar');
+Route::get('/editar/{id}', 'ProductosController@edit')->name('editar');
 
 
 Auth::routes();

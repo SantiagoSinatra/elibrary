@@ -12,6 +12,8 @@
             <div class="navbar-nav nav-center">
 
                 <a class="nav-item nav-link active" href="/">Inicio <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="#">Categorias</a>
+                <a class="nav-item nav-link" href="/productos">Ver Productos</a>
 
                 @guest
                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -35,11 +37,13 @@
                             </form>
                         </div>
                     </li>
+                    @if (Auth::User()->id == 1)
+                    <a class="nav-item nav-link" href="/editar">Administrar</a>
+                    @endif
+                    <a class="nav-item nav-link" href="/vender">Vender</a>
+
                 @endguest
 
-                <a class="nav-item nav-link" href="#">Categorias</a>
-                <a class="nav-item nav-link" href="#">Mis Productos</a>
-                <a class="nav-item nav-link" href="/vender">Vender</a>
             </div>
         </div>
     </nav>
