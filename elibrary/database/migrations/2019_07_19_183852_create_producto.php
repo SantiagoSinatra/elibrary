@@ -13,14 +13,15 @@ class CreateProducto extends Migration
      */
     public function up()
     {
-        Schema::create('product', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('productos', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->string('description');
+            $table->string('categoria_id');
+            $table->integer('precio');
+            $table->string('imageLoc');
+            $table->string('imageLoc2');
             $table->timestamps();
-            $table->string('name_prod');
-            $table->string('barcode')->nullable();
-            $table->decimal('price');
-            $table->string('pic_prod')->nullable();
-            $table->unsignedInteger('category_id');
 
            /*  $table->foreign('category_id')
             ->references('id')
@@ -37,6 +38,6 @@ class CreateProducto extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product');
+        Schema::dropIfExists('productos');
     }
 }

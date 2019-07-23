@@ -1,11 +1,16 @@
-<div class="nav-div">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Elibrary</a>
+<div class="container-fluid nav-div">
+    <div class="row">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark col-12">
+        <a class="navbar-brand" href="/">Elibrary</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
+
+            <div class="navbar-nav nav-center">
+
                 <a class="nav-item nav-link active" href="/">Inicio <span class="sr-only">(current)</span></a>
 
                 @guest
@@ -38,5 +43,6 @@
             </div>
         </div>
     </nav>
+</div>
 
 </div>
